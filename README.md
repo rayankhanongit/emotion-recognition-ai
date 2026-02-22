@@ -1,70 +1,163 @@
-# Getting Started with Create React App
+# 🧠 Real-Time Emotion Recognition & Analytics Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack AI-powered web application that performs real-time facial emotion recognition using a deep learning model trained on FER-2013 and displays live analytics through a modern React dashboard.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+* 🎥 Real-time webcam face detection
+* 🟢 Live bounding box overlay
+* 🤖 CNN-based emotion classification (FER-2013)
+* 📊 Multi-emotion trend graph (last 30 seconds)
+* 🥧 Live emotion distribution pie chart
+* ⏱ Session timer
+* ⚡ FastAPI backend for inference
+* 🎨 Modern React analytics dashboard
+* 🔄 Real-time frontend-backend integration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏗️ Tech Stack
 
-### `npm test`
+### 🔹 Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React.js
+* face-api.js (TinyFaceDetector)
+* Chart.js (Analytics visualization)
+* Axios
 
-### `npm run build`
+### 🔹 Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* FastAPI
+* TensorFlow / Keras
+* OpenCV
+* NumPy
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🔹 Model
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Custom CNN trained on FER-2013 dataset
+* 7 emotion classes:
 
-### `npm run eject`
+  * Angry
+  * Disgust
+  * Fear
+  * Happy
+  * Sad
+  * Surprise
+  * Neutral
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📂 Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+emotion-recognition/
+│
+├── backend/
+│   ├── main.py
+│   └── models/
+│       └── emotion_model.h5
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+└── README.md
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🧠 How It Works
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Webcam stream is captured in the browser.
+2. face-api.js detects face and draws bounding box.
+3. Cropped face image is sent to FastAPI backend.
+4. Backend processes image using trained CNN model.
+5. Emotion probabilities are returned.
+6. Frontend displays:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   * Predicted emotion
+   * Confidence score
+   * Real-time trend graph
+   * Distribution pie chart
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ⚙️ Installation & Setup
 
-### Analyzing the Bundle Size
+### 1️⃣ Clone Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git clone https://github.com/YOUR_USERNAME/emotion-recognition-ai.git
+cd emotion-recognition-ai
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 2️⃣ Backend Setup
 
-### Advanced Configuration
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate   # Windows
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Backend runs on:
 
-### Deployment
+```
+http://127.0.0.1:8000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+### 3️⃣ Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Frontend runs on:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 📊 Sample Dashboard
+
+* Real-time emotion detection
+* Stable bounding box tracking
+* Live analytics visualization
+
+---
+
+## 🎯 Future Improvements
+
+* Deploy backend to cloud (Render / AWS)
+* Deploy frontend to Vercel
+* Add authentication
+* Store emotion history in database
+* Generate downloadable session reports
+* Improve model accuracy with data augmentation
+
+---
+
+## 📈 Resume Description
+
+Built a full-stack real-time facial emotion recognition system using React.js, FastAPI, and a CNN trained on FER-2013. Implemented webcam-based inference, live analytics visualization, and frontend face detection with bounding box overlay.
+
+---
+
+## 👨‍💻 Author
+
+Rayan Khan
+GitHub: https://github.com/rayankhanongit
+
+---
+
+⭐ If you found this project useful, consider starring the repository!
